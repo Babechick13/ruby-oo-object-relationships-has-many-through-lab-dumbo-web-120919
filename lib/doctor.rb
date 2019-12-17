@@ -1,7 +1,8 @@
-@@all = []
+end
 
-  def initialize(patient, doctor, date)
-  def initialize(date, patient, doctor)
-    @date = date
-    @doctor = doctor
-    @patient = patient
+  def new_appointment(patient, date)
+    Appointment.new(patient, self, date)
+    Appointment.new(date, patient, self)
+  end
+
+  def appointments
